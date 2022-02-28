@@ -4,7 +4,7 @@
 </h1>
 
 <h2 align="center">
-    AirBnB_clone 
+    AirBnB_clone - Testing Branch
 </h2>
 
 <p align="center">
