@@ -81,8 +81,8 @@ Carlos Bentin -
         <img src="https://img.shields.io/badge/Carlos-mainPage-blue">
 </a>
 Luis Gonzales -
-<a href="https://github.com/tbu">
-        <img src="https://img.shields.io/badge/tbu">
+<a href="https://github.com/lgonzalescc">
+        <img src="https://img.shields.io/badge/Luis-Luis%20Gonzales-blue">
 </a>
 
 </p>
