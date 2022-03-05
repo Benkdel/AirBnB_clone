@@ -23,7 +23,6 @@ class HBNBCommand(cmd.Cmd):
         return (arg.split())
 
     " ===================== Model Methods ============================ "
-
     def do_print(self, arg):
         _list = []
         _list = arg.split()
