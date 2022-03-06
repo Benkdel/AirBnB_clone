@@ -38,7 +38,7 @@ class FileStorage:
 
     def save(self):
         """
-            Serializes __objects dict 
+            Serializes __objects dict
             to the JSON file in path
         """
         filename = self.__file_path
@@ -51,12 +51,12 @@ class FileStorage:
                 obj_dict[key] = obj.to_dict()
 
                 with open(filename, mode="a") as json_file:
-                    json_file.write(json.dumps(obj_dict))    
+                    json_file.write(json.dumps(obj_dict))
 
     def reload(self):
         """
             Deserializes JSON file to __objects dict
             if file exists. otherwise do nothing, no exception should
-            be rise  
+            be rise
         """
         pass
