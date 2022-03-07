@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
         Wrapper class for cmd
     """
     intro = 'Welcome to the AirBnB-clone console'
-    prompt = '(hbnb) '
+    prompt = '(hbnb)'
     file = None
 
     def do_quit(self, args):
