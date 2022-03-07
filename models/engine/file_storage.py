@@ -62,8 +62,6 @@ class FileStorage:
         """
         from models.base_model import BaseModel
 
-        print("Inside reload method from file storage ... ")
-
         filename = self.__file_path
 
         try:
