@@ -61,16 +61,28 @@ class FileStorage:
             be rise
         """
         from models.base_model import BaseModel
+        from models.user import User
+        from models.place import Place
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.review import Review
 
-        filename = self.__file_path
 
+        class_dict = {
+            "BaseModel": BaseModel,
+            "User": User,
+            "Place": Place,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Review": Review
+        }
         try:
-            if path.exists(filename) is True:
-                with open(filename, mode="r") as json_file:
-                    cls_dict = json.load(json_file)
-                    for key, val in cls_dict.items():
-                        # class_name = val["__class__"]
-                        self.new(BaseModel(**val))
-
-        except BaseException:
+            with open(self.__file_path, mode="r") as file_json:
+                # info!: values contain of dictionary attributes of the object
+                for key, values in json.load(file_json).items():
+                    class_name = values["__class__"]
+                    self.new(class_dict[class_name](**values))
+        except Exception:
             pass

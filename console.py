@@ -23,13 +23,13 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, args):
         """
-            Quit command to exit the program\n
+            Quit command to exit the program
         """
         return True
 
     def do_EOF(self, args):
         """
-            EOF command to exit the program\n
+            EOF command to exit the program
         """
         print("")
         return True
@@ -45,17 +45,6 @@ class HBNBCommand(cmd.Cmd):
             Prints help command description
         """
         print("Provides description of a given command")
-
-    def do_print(self, arg):
-        _list = []
-        _list = arg.split()
-        for item in _list:
-            print(item)
-
-    def do_create_obj(self, arg):
-        B1 = BaseModel()
-        print(B1)
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
