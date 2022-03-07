@@ -4,7 +4,6 @@
 """
 
 import json
-from lib2to3.pytree import Base
 from os import path
 
 
@@ -20,7 +19,7 @@ class FileStorage:
     """
 
     __file_path = "file.json"
-    __objects = {}
+    __objects = dict()
 
     " =============== Public Methods ===================== "
 
