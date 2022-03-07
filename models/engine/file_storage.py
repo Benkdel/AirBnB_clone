@@ -4,6 +4,8 @@
 """
 
 import json
+from lib2to3.pytree import Base
+from os import path
 
 
 class FileStorage:
@@ -18,7 +20,7 @@ class FileStorage:
     """
 
     __file_path = "file.json"
-    __objects = dict()
+    __objects = {}
 
     " =============== Public Methods ===================== "
 
@@ -51,7 +53,8 @@ class FileStorage:
                 obj_dict[key] = obj.to_dict()
 
                 with open(filename, mode="a") as json_file:
-                    json_file.write(json.dumps(obj_dict))
+                    json_file.write(json.dumps(
+                        obj_dict, indent=2, sort_keys=True))
 
     def reload(self):
         """
@@ -59,13 +62,20 @@ class FileStorage:
             if file exists. otherwise do nothing, no exception should
             be rise
         """
+        from models.base_model import BaseModel
+
+        print("Inside reload method from file storage ... ")
+
         filename = self.__file_path
-        result = []
-        try:
-            with open(filename, encoding="utf-8") as json_file:
-                object_list = json.loads(filename)
-                for _dict in object_list:
-                    result.append(self.new(**_dict))
-                return (result)
-        except BaseException:
-            pass
+
+        # try:
+        if path.exists(filename) is True:
+            with open(filename, mode="r") as json_file:
+                cls_dict = json.load(json_file)
+                for key, val in cls_dict.items():
+                    # class_name = val["__class__"]
+                    self.new(BaseModel(**val))
+
+        # except BaseException:
+        #    print("file not created")
+        #    pass

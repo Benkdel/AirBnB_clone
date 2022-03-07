@@ -13,7 +13,7 @@ if __name__ == '__main__':
         Execute some fast testing
     """
 
-    num_test = 2
+    num_test = 3
 
     if num_test == 1:
         my_model = BaseModel()
@@ -46,6 +46,7 @@ if __name__ == '__main__':
             obj = all_objs[obj_id]
             print(obj)
 
+    elif num_test == 2:
         print("-- Create a new object --")
         my_model = BaseModel()
         my_model.name = "My_First_Model"
@@ -53,11 +54,9 @@ if __name__ == '__main__':
         my_model.save()
         print(my_model)
 
-    elif num_test == 2:
-        my_model = BaseModel()
-        all_obj = storage.reload()
-        for _obj in all_obj:
-            print(_obj)
-
+    elif num_test == 3:
+        my_obj = storage.all()
+        for key, val in my_obj.items():
+            print("key {} ||| val: {} ".format(key, val))
     else:
         pass
