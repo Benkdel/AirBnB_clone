@@ -15,7 +15,7 @@ if __name__ == '__main__':
         Execute some fast testing
     """
 
-    num_test = 8
+    num_test = 12
 
     if num_test == 1:
         my_model = BaseModel()
@@ -49,6 +49,12 @@ if __name__ == '__main__':
             print(obj)
 
     elif num_test == 2:
+        all_objs = storage.all()
+        print("-- Reloaded objects --")
+        for obj_id in all_objs.keys():
+            obj = all_objs[obj_id]
+            print(obj)
+
         print("-- Create a new object --")
         my_model = BaseModel()
         my_model.name = "My_First_Model"
@@ -115,6 +121,14 @@ if __name__ == '__main__':
             os.remove(file_path)
         except Exception as e:
             pass
+
+    elif num_test == 12:
+        
+        class FileStorage(FileStorage):
+            def all(self):
+                """ DOC
+                """
+                return {}
 
     else:
         pass
