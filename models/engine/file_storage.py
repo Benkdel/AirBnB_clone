@@ -67,6 +67,5 @@ class FileStorage:
                 for _dict in object_list:
                     result.append(self.new(**_dict))
                 return (result)
-        except:
-            print("error loading file")
+        except BaseException:
             pass

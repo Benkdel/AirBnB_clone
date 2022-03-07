@@ -14,7 +14,7 @@ if __name__ == '__main__':
     """
 
     num_test = 2
-    
+
     if num_test == 1:
         my_model = BaseModel()
         my_model.name = "My_First_Model"
@@ -28,7 +28,8 @@ if __name__ == '__main__':
         print("JSON of my_model:")
         for key in my_model_json.keys():
             print("\t{}: ({}) - {}".format(key,
-                type(my_model_json[key]), my_model_json[key]))
+                                           type(my_model_json[key]),
+                                           my_model_json[key]))
 
         print("--")
         my_new_model = BaseModel(**my_model_json)
@@ -54,7 +55,7 @@ if __name__ == '__main__':
 
     elif num_test == 2:
         my_model = BaseModel()
-        all_obj = storage.reload()    
+        all_obj = storage.reload()
         for _obj in all_obj:
             print(_obj)
 
