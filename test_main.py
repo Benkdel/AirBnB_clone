@@ -13,7 +13,7 @@ if __name__ == '__main__':
         Execute some fast testing
     """
 
-    num_test = 3
+    num_test = 1
 
     if num_test == 1:
         my_model = BaseModel()
