@@ -3,7 +3,6 @@
     Super Class
 """
 
-from time import strptime
 import uuid
 import os.path
 from datetime import datetime

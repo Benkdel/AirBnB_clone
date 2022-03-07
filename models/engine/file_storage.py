@@ -53,8 +53,7 @@ class FileStorage:
                 obj_dict[key] = obj.to_dict()
 
                 with open(filename, mode="a") as json_file:
-                    json_file.write(json.dumps(
-                        obj_dict, indent=2, sort_keys=True))
+                    json_file.write(json.dumps(obj_dict))
 
     def reload(self):
         """
@@ -68,14 +67,13 @@ class FileStorage:
 
         filename = self.__file_path
 
-        # try:
-        if path.exists(filename) is True:
-            with open(filename, mode="r") as json_file:
-                cls_dict = json.load(json_file)
-                for key, val in cls_dict.items():
-                    # class_name = val["__class__"]
-                    self.new(BaseModel(**val))
+        try:
+            if path.exists(filename) is True:
+                with open(filename, mode="r") as json_file:
+                    cls_dict = json.load(json_file)
+                    for key, val in cls_dict.items():
+                        # class_name = val["__class__"]
+                        self.new(BaseModel(**val))
 
-        # except BaseException:
-        #    print("file not created")
-        #    pass
+        except BaseException:
+            pass
