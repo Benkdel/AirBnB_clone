@@ -23,13 +23,6 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
     file = None
 
-    " ===================== Console Methods / Helpers ================ "
-    def parse(arg):
-        print(arg.split())
-        return (arg.split())
-
-    " ===================== Model Methods ============================ "
-
     def do_quit(self, args):
         """
             Quit command to exit the program\n
