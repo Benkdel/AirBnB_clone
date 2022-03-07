@@ -42,17 +42,12 @@ class FileStorage:
             Serializes __objects dict
             to the JSON file in path
         """
-        filename = self.__file_path
-        obj_dict = dict()
+        objs_dict = self.__objects.copy()
 
-        if self.__objects is None or not self.__objects:
-            pass
-        else:
-            for key, obj in self.__objects.items():
-                obj_dict[key] = obj.to_dict()
-
-                with open(filename, mode="a") as json_file:
-                    json_file.write(json.dumps(obj_dict))
+        for key, obj in self.__objects.items():
+            objs_dict[key] = obj.to_dict()
+        with open(self.__file_path, mode="w") as file_json:
+            file_json.write(json.dumps(objs_dict))
 
     def reload(self):
         """
@@ -68,7 +63,6 @@ class FileStorage:
         from models.amenity import Amenity
         from models.review import Review
 
-
         class_dict = {
             "BaseModel": BaseModel,
             "User": User,
@@ -80,7 +74,6 @@ class FileStorage:
         }
         try:
             with open(self.__file_path, mode="r") as file_json:
-                # info!: values contain of dictionary attributes of the object
                 for key, values in json.load(file_json).items():
                     class_name = values["__class__"]
                     self.new(class_dict[class_name](**values))
