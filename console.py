@@ -46,5 +46,6 @@ class HBNBCommand(cmd.Cmd):
         """
         print("Provides description of a given command")
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
