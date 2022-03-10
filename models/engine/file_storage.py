@@ -47,7 +47,7 @@ class FileStorage:
         for key, obj in self.__objects.items():
             objs_dict[key] = obj.to_dict()
         with open(self.__file_path, mode="w") as file_json:
-            file_json.write(json.dumps(objs_dict))
+            file_json.write(json.dumps(objs_dict, indent=2))
 
     def reload(self):
         """

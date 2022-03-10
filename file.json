@@ -1,1 +1,14 @@
-{"BaseModel.4fbfb966-5eff-4fc7-85cc-c27b67607aab": {"id": "4fbfb966-5eff-4fc7-85cc-c27b67607aab", "created_at": "2022-03-07T11:31:41.322930", "updated_at": "2022-03-07T11:31:41.322942", "name": "My_First_Model", "my_number": 89, "__class__": "BaseModel"}}
+{
+  "User.bcbba14c-c7e8-4396-ba96-fa07640cb436": {
+    "id": "bcbba14c-c7e8-4396-ba96-fa07640cb436",
+    "created_at": "2022-03-10T08:35:08.815029",
+    "updated_at": "2022-03-10T08:35:08.815041",
+    "__class__": "User"
+  },
+  "City.df3614a4-66ff-4e15-b460-cda87dae92cc": {
+    "id": "df3614a4-66ff-4e15-b460-cda87dae92cc",
+    "created_at": "2022-03-10T08:35:35.205966",
+    "updated_at": "2022-03-10T08:35:35.205976",
+    "__class__": "City"
+  }
+}
