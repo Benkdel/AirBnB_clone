@@ -15,3 +15,16 @@ body {
     width: 100%;
     display: flex;
 }
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 14px;
+}
