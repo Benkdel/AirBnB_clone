@@ -15,7 +15,7 @@
     justify-content: space-evenly;
 }
 
-.results li {
+.results .result-list {
     border: 1px solid #FF5A5F;
     border-radius: 4px;
     width: 390px;
@@ -117,4 +117,69 @@
 .results .description {
     padding: 15px 0px 0px 0px;
     text-align: start;
+}
+
+.results .amenities {
+    margin-top: 40px;
+}
+.results .amenities h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    text-align: start;
+}
+
+.results .amenities .text {
+    padding: 5px 5px 10px 25px;
+}
+
+.results .amenities .am-TV,
+.results .amenities .am-WIFI,
+.results .amenities .am-PETS  {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.results .amenities .am-TV .icon {
+    background: url(../images/icon_tv.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+}
+.results .amenities .am-WIFI .icon {
+    background: url(../images/icon_wifi.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+}
+
+.results .amenities .am-PETS .icon {
+    background: url(../images/icon_pets.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+}
+
+.results .reviews {
+    margin-top: 40px;
+    text-align: start;
+}
+.results .reviews ul, .results .reviews ul li {
+    margin: 0;
+    padding: 0;
+}
+.results .reviews h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.results .reviews p {
+    font-size: 14px;
 }

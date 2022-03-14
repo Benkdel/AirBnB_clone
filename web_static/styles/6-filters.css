@@ -40,6 +40,7 @@
     flex-basis: 25%;
     flex-grow: 1;
     border-right: 1px solid #DDDDDD;
+    z-index: 1;
 }
 .filter .amenities {
     color: black;
@@ -47,6 +48,7 @@
     flex-basis: 25%;
     flex-grow: 1;
     margin-left: 0px;
+    z-index: 1;
 }
 
 .filter .spacer {
